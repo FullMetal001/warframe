@@ -19,7 +19,7 @@ const TopBar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 730) {
+      if (window.innerWidth > 740) {
         setIsMenuOpen(false); 
         setIsTextVisible(false);
       }
