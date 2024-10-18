@@ -35,6 +35,7 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative;
     transition: padding-bottom 0.5s;
+    user-select: none;
 }
 .top-container.padding-expanded {
     padding-bottom: 350px;
@@ -50,7 +51,8 @@ body, html {
 .top-menu ul {
     list-style: none;
     display: flex;
-    gap: 20px;      
+    gap: 20px;  
+    user-select: none;    
 }
 .top-menu a {
     color: white;
@@ -63,6 +65,7 @@ body, html {
     color: #ffcc00;
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
     font-size: 1.1em;
+    cursor: pointer;
 }
 .top-menu a::after {
     content: '';
@@ -199,7 +202,8 @@ body, html {
     border-radius: 10px; 
     box-shadow: 0 0 15px rgba(253, 249, 1, 0.2); 
     transition: opacity 0.4s ease;
-    border: 1px solid yellow;
+    border: 1px solid yellow;    
+    backdrop-filter: blur(10px);
 }
 .slider-image-container {
     position: relative;
@@ -209,7 +213,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px; 
+    height: 450px;
+    backdrop-filter: blur(10px);     
 }
 .slider-image-container.fade .slider-image {
     opacity: 0; 
