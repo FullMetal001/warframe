@@ -342,17 +342,20 @@ body, html {
 .footer h3 {
     color: white; 
     margin-bottom: 15px; 
-    font-size: 1.5rem; 
+    font-size: 1.3rem; 
 }
 .social-icons {
     display: flex; 
     justify-content: center; 
-    gap: 20px;     
+    gap: 20px;        
+}
+.social-icons a svg {
+    width: 30px; 
 }
 .social-icons a {      
     display: inline-block; 
     filter: brightness(0.8) invert(0);    
-    transition: transform 0.3s, filter 0.3s; 
+    transition: transform 0.3s, filter 0.3s;     
 }
 .social-icons a:hover {
     transform: scale(1.1); 
@@ -412,10 +415,20 @@ body, html {
         font-size: 1.5em;         
         letter-spacing: 2px;
         word-spacing: 2px;
+        text-align: justify;
     }
     .info1-container p {
         font-size: 1.1em;         
         letter-spacing: 2px;
         text-align: justify;       
+    }
+    .warframe-table-container h2 {
+       font-size: 1.3em;
+    }
+    .footer h3 {        
+        font-size: 1rem; 
+    }
+    .social-icons a svg {
+        width: 20px; 
     }
 }
