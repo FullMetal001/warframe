@@ -438,7 +438,7 @@ body, html {
 @media (max-width: 560px) {
     /* info */ 
     .info1-container h2 {
-        font-size: 1em;         
+        font-size: 0.9em;         
         letter-spacing: 2px;
         word-spacing: 0px;
         text-align: justify;
