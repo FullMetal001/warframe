@@ -162,11 +162,12 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px 20px 10px;    
     transition: border 0.5s ease, box-shadow 0.5s ease, font-size 0.5s ease;
+    font-size: 0.9em;
 }
 .slider-text:hover {
     border: 1px solid #ffcc00; 
     box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
 }
 .slider-text h2 {
@@ -184,11 +185,12 @@ body, html {
     padding: 10px 20px 10px;
     margin-top: 60px;    
     transition: border 0.5s ease, box-shadow 0.5s ease, font-size 0.5s ease;
+    font-size: 0.9em;
 }
 .slider-text2:hover {
     border: 1px solid #ffcc00; 
     box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
-    font-size: 1.1em;
+    font-size: 1em;
     cursor: pointer;
 }
 .slider-text2 h2 {
@@ -199,13 +201,13 @@ body, html {
 }
 .slider-image {
     width: 50%;      
-    height: 90%;
+    height: 100%;
     object-fit: fill; 
     border-radius: 10px; 
     box-shadow: 0 0 15px rgba(253, 249, 1, 0.2); 
     transition: opacity 0.4s ease;
     border: 1px solid yellow;    
-    backdrop-filter: blur(10px);   
+    backdrop-filter: blur(10px);
 }
 .slider-image-container {
     position: relative;
@@ -215,7 +217,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 365px;    
+    height: 365px;  
+    padding: 10px 0 10px;     
 }
 .slider-image-container.fade .slider-image {
     opacity: 0; 
@@ -232,7 +235,8 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 220px;     
+    height: 220px;  
+    padding: 10px 0 10px   
 }
 .slider-imagew-container.fade .slider-image {
     opacity: 0; 
@@ -443,6 +447,33 @@ body, html {
         font-size: 0.8em;         
         letter-spacing: 2px;
         text-align: justify;       
+    }
+
+    /* Slider */
+    .slider-text {
+        font-size: 0.7em;
+    }
+    .slider-text:hover {
+        font-size: 0.8em;
+    }
+    .slider-text2 {
+        font-size: 0.7em;
+    }
+    .slider-text2:hover {
+        font-size: 0.8em;
+    }
+    .slider-image {
+        width: 50%;      
+        height: 100%;
+        object-fit: fill; 
+        border-radius: 10px; 
+        box-shadow: 0 0 15px rgba(253, 249, 1, 0.2); 
+        transition: opacity 0.4s ease;
+        border: 1px solid yellow;    
+        backdrop-filter: blur(10px);
+    }
+    .slider-image-container {        
+        height: 320px; 
     }
 
     /* WarframeTable */
