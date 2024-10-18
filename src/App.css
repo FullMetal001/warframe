@@ -2,15 +2,21 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box;    
 }
-.home {   
-    background-image: url('/images/bg3.jpg');    
+body, html {
+    margin: 0; 
+    height: 100%; 
+}
+.contenedor-principal {   
+    background-image: url('/images/bg4.jpg');    
     background-position: center;
     background-size: cover;
-    border-image: fill 0 linear-gradient(#0003, #0000);  
-    height: 100vh;
-    padding: 20px 20px 0;
+    border-image: fill 0 linear-gradient(#0003, #0000);     
+    min-height: 100vh;
+    padding: 20px 0 0;
+    position: relative;
+    overflow: hidden;
 }
 
 /* TopBar */
@@ -18,9 +24,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;      
+    padding: 10px 20px; 
+    margin: 0 20px;     
     /*background-color: rgba(28, 131, 187, 0.4);*/
-    background: transparent;
+    background-color: rgba(188, 107, 0, 0.4);
     border: 1px solid white;
     color: white;        
     border-radius: 50px;
@@ -34,7 +41,7 @@
     border-radius: 20px;
 }
 .top-logo img {
-    width: 70px;
+    width: 150px;
 }
 .top-menu {
     display: flex; 
@@ -81,6 +88,56 @@
     width: 30px;    
 }
 
+/* Video BG */
+.video-bg-container {
+    position: relative;
+    width: 100%;    
+    margin: 10px 0; 
+    overflow: hidden;    
+    max-height: 50vh;
+    height: auto;
+}
+.video-bg {
+    width: 100%; 
+    height: 50%; 
+    position:relative; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Info1 */
+.info1-container {
+    background-color: rgba(0, 0, 0, 0.5); 
+    color: white; 
+    padding: 20px; 
+    border-radius: 10px; 
+    max-width: 1200px;
+    margin: 20px auto; 
+    text-align: center; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    /*background: transparent;*/
+    backdrop-filter: blur(10px);
+    transition: color 0.3s ease;
+    user-select: none;
+}
+.info1-container:hover {
+    color: #ffcc00;
+}
+.info1-container h2 {
+    font-size: 2em; 
+    margin-bottom: 10px; 
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+
+.info1-container p {
+    font-size: 1.2em; 
+    line-height: 1.5; 
+}
+
 /* Slider */
 .slider {
     display: flex;
@@ -88,21 +145,71 @@
     justify-content: center;
     position: relative;
     margin-top: 30px; 
-    flex-direction: column;       
+    flex-direction: column; 
+    margin: 0 20px;      
+}
+.slider-text {
+    background-color: rgba(188, 107, 0, 0.4);
+    border: 1px solid white;            
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px 10px;    
+    transition: border 0.5s ease, box-shadow 0.5s ease, font-size 0.5s ease;
+}
+.slider-text:hover {
+    border: 1px solid #ffcc00; 
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.slider-text h2 {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
+}
+.slider-text2 {    
+    background-color: rgba(188, 107, 0, 0.4);
+    border: 1px solid white;            
+    border-radius: 50px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px 20px 10px;
+    margin-top: 60px;    
+    transition: border 0.5s ease, box-shadow 0.5s ease, font-size 0.5s ease;
+}
+.slider-text2:hover {
+    border: 1px solid #ffcc00; 
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
+    font-size: 1.1em;
+    cursor: pointer;
+}
+.slider-text2 h2 {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 1px;
+    user-select: none;
 }
 .slider-image {
-    width: 100%; 
-    /*max-width: 1000px; */
+    width: auto; 
+    max-width: 100%; 
     height: auto; 
+    max-height: 100%;
     border-radius: 10px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: opacity 0.5s ease;
+    box-shadow: 0 0 15px rgba(253, 249, 1, 0.2); 
+    transition: opacity 0.4s ease;
+    border: 1px solid yellow;
 }
 .slider-image-container {
     position: relative;
     width: 100%;
     max-width: 1000px; 
     overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px; 
 }
 .slider-image-container.fade .slider-image {
     opacity: 0; 
@@ -125,19 +232,84 @@
     background-color: rgba(28, 131, 187, 1); 
 }
 
-@media (max-width: 740px) {
-    .home {   
-        background-image: url('/images/bg1.jpg');  
-        border-image: fill 0 linear-gradient(#0003, #0000);      
+/* Warframe Table */
+.warframe-table-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    color: #ffff00; 
+    overflow-x: auto;
+}
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: 20px; 
+    scrollbar-color: rgba(188, 107, 0, 0.7) rgba(0, 0, 0, 0.5); 
+}
+.table-wrapper::-webkit-scrollbar {
+    width: 12px; 
+    height: 12px; 
+}
+
+.table-wrapper::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px; 
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(188, 107, 0, 0.7); 
+    border-radius: 10px; 
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(188, 107, 0, 1); 
+}
+.warframe-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.warframe-table th, .warframe-table td {
+    border: 1px solid #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.warframe-table th {
+    background-color: rgba(188, 107, 0, 0.4);
+}
+
+.warframe-table img {
+    width: 50px; 
+    height: auto; 
+}
+.table-button button {
+    background: transparent;
+    color: white; 
+    border: 1px solid #ffff00; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    margin: 20px; 
+    backdrop-filter: blur(10px);
+    transition: font-size 0.3s ease, box-shadow 0.3s ease;
+}
+.table-button {
+    text-align: center;
+}
+.table-button button:hover {
+    font-size: 1.1em;
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
+}
+
+/* pantalla mitad no tan peq */
+@media (max-width: 830px) { 
+    .contenedor-principal {   
+        background-image: url('/images/bg1.jpg');             
     }
-    /* TopBar */ 
-    .top-container {             
-        background-color: rgba(188, 107, 0, 0.4);
-        /*background: transparent;*/
-        color: white; 
-        border: 1px solid white; 
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);        
-    }   
+    /* TopBar */       
     .top-menu {
         display: none; 
         position: absolute;
@@ -176,4 +348,9 @@
         text-align: center; 
         padding: 10px 0; 
     }
+}
+
+/* Pantalla celulares */
+@media (max-width: 560px) { 
+
 }

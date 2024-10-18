@@ -19,7 +19,7 @@ const TopBar = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 740) {
+      if (window.innerWidth > 830) {
         setIsMenuOpen(false); 
         setIsTextVisible(false);
       }
@@ -46,7 +46,7 @@ const TopBar = () => {
       <nav className={`top-menu ${isTextVisible ? 'open' : ''}`}>    
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/contact">Warframes</a></li>
+          <li><a href="/warframes">Warframes</a></li>
           <li><a href="/about">Primary Weapons</a></li>
           <li><a href="/about">Secondary Weapons</a></li>
           <li><a href="/about">Melee</a></li>
