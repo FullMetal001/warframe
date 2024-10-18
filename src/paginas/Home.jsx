@@ -6,8 +6,8 @@ import Footer from "../componentes/Footer"
 const Home = () => {
   return (
     <div className='home'> 
-        <Videobg />
         <Info1 />
+        <Videobg />        
         <Slider />
         <Footer />
     </div>
