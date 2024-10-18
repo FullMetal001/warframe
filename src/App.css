@@ -213,8 +213,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
-    backdrop-filter: blur(10px);     
+    height: 450px;       
 }
 .slider-image-container.fade .slider-image {
     opacity: 0; 
@@ -409,5 +408,14 @@ body, html {
 
 /* Pantalla celulares */
 @media (max-width: 560px) { 
-
+    .info1-container h2 {
+        font-size: 1.5em;         
+        letter-spacing: 2px;
+        word-spacing: 2px;
+    }
+    .info1-container p {
+        font-size: 1.1em;         
+        letter-spacing: 2px;
+        text-align: justify;       
+    }
 }
