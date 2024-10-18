@@ -56,7 +56,7 @@ const TopBar = () => {
         <ul>
           <li><a href="/">Home</a></li>
           <li><a onClick={() => changeUrl('/warframes')}>Warframes</a></li>
-          <li><a href="/">Primary Weapons</a></li>
+          <li><a onClick={() => changeUrl('/primaryweapons')}>Primary Weapons</a></li>
           <li><a href="/">Secondary Weapons</a></li>
           <li><a href="/">Melee</a></li>
         </ul>

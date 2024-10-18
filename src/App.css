@@ -209,13 +209,30 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px; 
+    height: 450px; 
 }
 .slider-image-container.fade .slider-image {
     opacity: 0; 
 }
 
 .slider-image-container .slider-image {
+    opacity: 1; 
+}
+.slider-imagew-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px; 
+    overflow: hidden; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 220px;     
+}
+.slider-imagew-container.fade .slider-image {
+    opacity: 0; 
+}
+
+.slider-imagew-container .slider-image {
     opacity: 1; 
 }
 .slider-button {
@@ -236,7 +253,7 @@ body, html {
 .warframe-table-container {
     margin: 20px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.8); 
     border-radius: 10px;
     color: #ffff00; 
     overflow-x: auto;
@@ -303,6 +320,41 @@ body, html {
     font-size: 1.1em;
     box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
 }
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.8);     
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+.footer-content {    
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+.footer h3 {
+    color: white; 
+    margin-bottom: 15px; 
+    font-size: 1.5rem; 
+}
+.social-icons {
+    display: flex; 
+    justify-content: center; 
+    gap: 20px;     
+}
+.social-icons a {      
+    display: inline-block; 
+    filter: brightness(0.8) invert(0);    
+    transition: transform 0.3s, filter 0.3s; 
+}
+.social-icons a:hover {
+    transform: scale(1.1); 
+    filter: brightness(1);
+}
+
 
 /* pantalla mitad no tan peq */
 @media (max-width: 830px) { 
