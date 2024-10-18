@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const TopBar = () => {
+  const navigate = useNavigate();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const [isTextVisible, setIsTextVisible] = useState(false);
   const timeoutRef = useRef(null);
@@ -16,6 +19,12 @@ const TopBar = () => {
       clearTimeout(timeoutRef.current);
     }
   };
+
+  const changeUrl = (a) => {
+    setIsMenuOpen(false); 
+    setIsTextVisible(false);
+    navigate(a);
+  }
 
   useEffect(() => {
     const handleResize = () => {
@@ -46,10 +55,10 @@ const TopBar = () => {
       <nav className={`top-menu ${isTextVisible ? 'open' : ''}`}>    
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="/warframes">Warframes</a></li>
-          <li><a href="/about">Primary Weapons</a></li>
-          <li><a href="/about">Secondary Weapons</a></li>
-          <li><a href="/about">Melee</a></li>
+          <li><a onClick={() => changeUrl('/warframes')}>Warframes</a></li>
+          <li><a href="/">Primary Weapons</a></li>
+          <li><a href="/">Secondary Weapons</a></li>
+          <li><a href="/">Melee</a></li>
         </ul>
       </nav>
     </div>
