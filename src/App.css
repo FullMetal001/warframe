@@ -2,24 +2,34 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: border-box;    
+    box-sizing: border-box;
 }
 body, html {
     margin: 0; 
-    height: 100%; 
+    height: 100%;     
+}
+
+#contenedor-principal {
+    background-image: linear-gradient(to bottom, 
+    rgba(0, 0, 0, 0.6), rgba(0, 0, 0,0.6)), url('/images/bg4.jpg');
 }
 .contenedor-principal {   
-    background-image: url('/images/bg4.jpg');    
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    border-image: fill 0 linear-gradient(#0003, #0000);     
-    min-height: 100vh;
     padding: 20px 0 0;    
-    overflow: hidden;     
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    /*background: linear-gradient(49deg, rgba(0, 0, 0, 0.8) 20%, rgb(184, 173, 11) 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: gradiente 5s linear infinite;  */  
 }
+@keyframes gradiente {
+    0%{background: linear-gradient(49deg, rgba(0, 0, 0, 0.8) 20%, rgb(184, 173, 11) 100%)}
+    50%{background: linear-gradient(49deg, rgba(0, 0, 0, 0.8) 90%, rgb(184, 173, 11) 100%)}
+    100%{background: linear-gradient(49deg, rgba(0, 0, 0, 0.8) 20%, rgb(184, 173, 11) 100%)}
+}
+
 
 /* TopBar */
 .top-container {
@@ -94,55 +104,74 @@ body, html {
 }
 
 /* Video BG */
-.video-bg-container {
+.video-bg-container { 
+    margin: 0 auto; 
+    width: 800px; 
+    height: 400px;     
+    margin-bottom: 20px;    
+    overflow: hidden;
     position: relative; 
-    width: 100%;    
-    margin: 10px 0; 
-    overflow: hidden;    
-    max-height: 50vh; 
-    min-height: 500px;     
-    transition: min-height 0.5s ease;
+    box-shadow: 0 4px 20px rgba(255, 204, 0, 0.8);
+    transition: min-height 0.5s ease;  
+    animation: shadowPulse 2s infinite;  
 }
 .video-bg {
     width: 100%; 
-    height: 100%;    
-    position: absolute; 
+    height: 100%;     
+    transform: translate(-50%, -50%); 
+    position: absolute;   
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    object-fit: fill;    
+    object-fit: fill;  
+    border: 5px solid rgba(255, 204, 0); 
+    border-radius: 5px;  
     z-index: 1;
+    animation: borderPulse 2s infinite;
+}
+@keyframes shadowPulse {
+    0%, 100% {
+        box-shadow: 0 4px 20px rgba(255, 204, 0, 0.5); 
+    }
+    50% {
+        box-shadow: 0 4px 40px rgba(255, 204, 0, 0.8); 
+    }
+}
+@keyframes borderPulse {
+    0%, 100% {
+        border-color: rgba(255, 204, 0, 0.5); 
+    }
+    50% {
+        border-color: rgba(255, 204, 0, 1); 
+    }
 }
 
 /* Info1 */
 .info1-container {
-    background-color: rgba(0, 0, 0, 0.5); 
-    color: white; 
+    background-color: rgba(0, 0, 0, 0.5);        
+    color: #ffcc00; 
     padding: 20px;     
-    max-width: 1200px;
-    margin: 20px auto; 
-    text-align: center; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-    border-radius: 10px;
-    /*background: transparent;*/
+    width: 795px;
+    margin: 20px auto 0;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);        
     backdrop-filter: blur(10px);
     transition: color 0.3s ease;
-    user-select: none;
-}
-.info1-container:hover {
-    color: #ffcc00;
+    user-select: none;    
 }
 .info1-container h2 {
     font-size: 2em; 
     margin-bottom: 10px; 
     letter-spacing: 2px;
-    word-spacing: 5px;
+    word-spacing: 5px; 
+    text-align: center;       
 }
-
 .info1-container p {
     font-size: 1.2em; 
     line-height: 1.5; 
+    font-family: Arial, Helvetica, sans-serif;       
+    text-align: left; 
 }
+
 
 /* Slider */
 .slider {
@@ -162,12 +191,12 @@ body, html {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 10px 20px 10px;    
     transition: border 0.5s ease, box-shadow 0.5s ease, font-size 0.5s ease;
-    font-size: 0.9em;
+    font-size: 1.2em;
 }
 .slider-text:hover {
     border: 1px solid #ffcc00; 
     box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
-    font-size: 1em;
+    font-size: 1.4em;
     cursor: pointer;
 }
 .slider-text h2 {
@@ -206,7 +235,8 @@ body, html {
     border-radius: 10px; 
     box-shadow: 0 0 15px rgba(253, 249, 1, 0.2); 
     transition: opacity 0.4s ease;
-    border: 1px solid yellow;    
+    filter: drop-shadow(0 0 0.5rem #ffff00);
+    box-shadow: 1px 1px 10px 1px  #ffff00;
     backdrop-filter: blur(10px);
 }
 .slider-image-container {
@@ -247,9 +277,10 @@ body, html {
 }
 .slider-button {
     background-color: rgba(255, 255, 255, 0.9); 
+    font-size: 1em;
     color: black; 
     border: none; 
-    padding: 10px 20px; 
+    padding: 15px 30px; 
     border-radius: 5px;
     cursor: pointer; 
     margin: 0 10px; 
@@ -259,7 +290,81 @@ body, html {
     background-color: rgb(225, 225, 31); 
 }
 
-/* Warframe Table */
+/* Warframe Componente */
+.warframe-container { 
+    margin-top: 20px;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.warframe-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;    
+}
+.warframe-item {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    width: 480px; 
+     
+    padding: 10px 10px 0; 
+    border-radius: 8px; 
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 1px 10px 1px  #ffff00;
+}
+.warframe-image {
+    width: 250px; 
+    height: auto; 
+    margin-right: 20px; 
+    filter: drop-shadow(0 0 0.5rem #ffff00);
+}
+.warframe-details {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    height: 300px;    
+}
+.warframe-details h2 {
+    margin: 0; 
+    margin-bottom: 50px;
+    color: #ffff00;
+    text-transform: uppercase;
+    font-size: 1.7em;
+}
+.warframe-details ul {
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    list-style-type: none; 
+    line-height: 40px;
+    padding: 0; 
+    margin: 0; 
+}
+.warframe-color {
+    color: #ffff00;
+    font-weight: 700;
+}
+.table-button button {
+    background: transparent;
+    color: white; 
+    border: 1px solid #ffff00; 
+    padding: 10px 20px; 
+    border-radius: 5px;
+    cursor: pointer; 
+    margin: 20px; 
+    backdrop-filter: blur(10px);
+    transition: font-size 0.3s ease, box-shadow 0.3s ease;
+}
+.table-button {
+    text-align: center;
+}
+.table-button button:hover {
+    font-size: 1.1em;
+    box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
+}
+
+/* Warframe Table *//*
 .warframe-table-container {
     margin: 20px;
     padding: 20px;
@@ -329,7 +434,7 @@ body, html {
 .table-button button:hover {
     font-size: 1.1em;
     box-shadow: 0 0 15px rgba(255, 238, 0, 0.5);
-}
+}*/
 
 /* Footer */
 .footer {
@@ -368,25 +473,12 @@ body, html {
     filter: brightness(1);
 }
 
-/* cambiar border de info */
-@media (max-width: 1220px) { 
-    .info1-container {
-        border-radius: 0;
-    }
-
-    /* Video bg */
-    .video-bg-container {        
-        min-height: 400px;         
-    }
-}
-
-
-
 
 /* pantalla mitad no tan peq */
 @media (max-width: 830px) { 
-    .contenedor-principal {   
-        background-image: url('/images/bg1.jpg');                     
+    #contenedor-principal {
+        background-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0.6), rgba(0, 0, 0,0.6)), url('/images/bg1.jpg');
     }
     /* TopBar */       
     .top-menu {
@@ -428,33 +520,48 @@ body, html {
         padding: 10px 0; 
     }
 
-    /* Video bg */
-    .video-bg-container {        
-        min-height: 300px;         
+    /* Info Container */
+    .info1-container {
+        width: 495px;
+    }
+
+    /* Video BG */
+    .video-bg-container {          
+        width: 500px; 
+        height: 300px; 
     }
 }
 
 /* Pantalla celulares */
 @media (max-width: 560px) {
     /* info */ 
+    .info1-container {
+        width: 295px;
+    }
     .info1-container h2 {
         font-size: 0.9em;         
         letter-spacing: 2px;
         word-spacing: 0px;
-        text-align: justify;
+        text-align: center;
     }
     .info1-container p {
         font-size: 0.8em;         
         letter-spacing: 2px;
-        text-align: justify;       
+        text-align: left;       
+    }
+
+    /* Video BG */
+    .video-bg-container {          
+        width: 300px; 
+        height: 150px; 
     }
 
     /* Slider */
     .slider-text {
-        font-size: 0.7em;
+        font-size: 1em;
     }
     .slider-text:hover {
-        font-size: 0.8em;
+        font-size: 1.2em;
     }
     .slider-text2 {
         font-size: 0.7em;
@@ -476,11 +583,23 @@ body, html {
         height: 320px; 
     }
 
-    /* WarframeTable */
-    .warframe-table-container h2 {
-       font-size: 1.3em;
+    /* Warframe */   
+    .warframe-item {        
+        width: 355px; 
     }
-
+    .warframe-image {
+        width: 200px; 
+        height: auto; 
+        margin-right: 10px;         
+    }   
+    .warframe-details h2 {       
+        font-size: 1.1em;
+    }
+    .warframe-details ul {        
+        line-height: 40px;
+        font-size: 0.7em;        
+    }       
+   
     /* Footer */
     .footer h3 {        
         font-size: 1rem; 
@@ -488,9 +607,28 @@ body, html {
     .social-icons a svg {
         width: 20px; 
     }
+}
 
-    /* Video bg */
-    .video-bg-container {        
-        min-height: 200px;         
+/* Pantalla celulares peq */
+@media (max-width: 325px) {
+   
+
+    /* Warframe */   
+    .warframe-item {        
+        width: 310px; 
     }
+    .warframe-image {
+        width: 175px; 
+        height: auto; 
+        margin-right: 5px;         
+    }   
+    .warframe-details h2 {        
+        font-size: 1em;
+    }
+    .warframe-details ul {        
+        font-size: 0.65em;  
+        line-height: 35px;      
+    }      
+
+   
 }
